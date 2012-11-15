@@ -2,6 +2,7 @@
 package lab3;
 
 /**
+ * This class extends RunTimeException to provide custom error handling
  *
  * @author Jenni
  */

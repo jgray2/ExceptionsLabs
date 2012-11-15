@@ -2,6 +2,7 @@ package lab1;
 
 import javax.swing.JOptionPane;
 
+
 /**
  * The purpose of this challenge is to give you practice time using
  * Java Exception handling techniques.
@@ -35,15 +36,13 @@ public class Challenge1 {
         JOptionPane.showMessageDialog(null, msg);
     }
     
-    public String extractLastName(String fullName) throws IllegalArgumentException {
+    public String extractLastName(String fullName) throws RuntimeException {
         if (fullName == null || fullName.length() == 0 ) {
             JOptionPane.showMessageDialog(null, NAME_REQ_MSG);
         }
-        String [] nameParts = new String [1];
-        try {
-            nameParts = fullName.split(" ");
-        } catch (ArrayIndexOutOfBoundsException iae) {
-            
+      String[] nameParts = fullName.split(" ");
+        if (nameParts.length != 2) {
+            throw new ArrayIndexOutOfBoundsException();
         }
         return nameParts[LAST_NAME_IDX];
     }
